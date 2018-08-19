@@ -36,6 +36,6 @@ class Chat:
         """
         Prints all the chat messages in the messages array.
         """
-        print("\n"*2)
+        print("\n"*3) # TODO naughty magic number
         for message in self._messages:
             print(message)
