@@ -30,7 +30,7 @@ class Chat:
         """
         Removes all the chat messages from the messages array.
         """
-        self._messages = []
+        self._messages.clear()
 
     def print_chat(self):
         """
