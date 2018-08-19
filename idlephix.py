@@ -9,10 +9,9 @@ __author__ = "Phixyn"
 __version__ = "v0.0.1"
 
 
-import os
-import subprocess
 import sys
 import time
+from util import console
 from util.logger import logger
 
 
@@ -23,16 +22,6 @@ woodMultiplier = 1 # TODO depends on axe/hatchet item (part of item configuratio
 woodcuttingLevel = 1
 woodcuttingExp = 0
 woodcuttingExpMultiplier = 0.5 # TODO should be per item (part of item configuration)
-
-
-def clear_screen():
-    """
-    Clear console and buffer
-    """
-    if os.name == "nt":
-        os.system("cls")
-    else:
-        subprocess.call(["printf", "'\033c'"]) # https://stackoverflow.com/a/23075152
 
 
 # def increment_resources():
@@ -52,7 +41,7 @@ def clear_screen():
 if __name__ == "__main__":
     try:
         while True:
-            clear_screen()
+            console.clear_screen()
             
             # "Update()"
             # increment_resources()
