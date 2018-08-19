@@ -9,6 +9,7 @@ __author__ = "Phixyn"
 __version__ = "v0.0.1"
 
 
+from chat import Chat
 import sys
 import time
 from util import console
@@ -19,10 +20,15 @@ class Game:
     """
     The Game class.
     """
+    # TODO: make certain methods and variables private
     def __init__(self):
         """
         Default constructor.
         """
+        # Chat "window" area
+        self._chat = Chat(max_messages=7)
+        self._chat.add_message("Welcome to IdlePhix.")
+
         # Item and skills
         self.wood = 0
         self.woodMultiplier = 1 # TODO depends on axe/hatchet item (part of item configuration)
@@ -31,13 +37,14 @@ class Game:
         self.woodcuttingExp = 0
         self.woodcuttingExpMultiplier = 0.5 # TODO should be per item (part of item configuration)
 
-    def increment_resources(self):
+    def _increment_resources(self):
         """
         Increments the quantity of each item.
         """
+        self._chat.add_message("You chop down some wood.")
         self.wood += self.woodMultiplier
 
-    def increment_exp(self):
+    def _increment_exp(self):
         """
         Increments experience points of each skill.
         """
@@ -47,8 +54,15 @@ class Game:
         """
         Updates the game.
         """
-        self.increment_resources()
-        self.increment_exp()
+        self._increment_resources()
+        self._increment_exp()
+
+    def draw(self):
+        """
+        "Draws" the game "window".
+        """
+        print("Wood: {0} | Woodcutting exp: {1} | Woodcutting level: {2}".format(self.wood, self.woodcuttingExp, self.woodcuttingLevel))
+        self._chat.print_chat()
 
 
 if __name__ == "__main__":
@@ -58,14 +72,9 @@ if __name__ == "__main__":
         while True:
             console.clear_screen()
             game.update()
-
-            # "Draw()"
-            print("\nWelcome to IdlePhix.\n")
-            logger.info("Wood: {0}".format(game.wood))
-            logger.info("Woodcutting exp: {0}".format(game.woodcuttingExp))
-            logger.info("Woodcutting level: {0}".format(game.woodcuttingLevel))
-
+            game.draw()
             time.sleep(1) # tfw not using delta
     except KeyboardInterrupt as ex:
+        print()
         logger.info("Exiting.")
         sys.exit(0)
