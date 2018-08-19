@@ -12,7 +12,7 @@ __version__ = "v0.0.1"
 from chat import Chat
 import sys
 import time
-from util import console
+from util import terminal
 from util.logger import logger
 
 
@@ -27,7 +27,8 @@ class Game:
         """
         # Chat "window" area
         self._chat = Chat(max_messages=7)
-        self._chat.add_message("Welcome to IdlePhix.")
+        self._chat.add_message("Welcome to {textColorMagenta}IdlePhix{textFormatReset}.".
+            format(textColorMagenta=terminal.TEXT_COLOR_MAGENTA, textFormatReset=terminal.TEXT_FORMATTING_RESET))
 
         # Item and skills
         self.wood = 0
@@ -41,7 +42,8 @@ class Game:
         """
         Increments the quantity of each item.
         """
-        self._chat.add_message("You chop down some wood.")
+        self._chat.add_message("You chop down some {textColorMagentaBold}wood{textFormatReset}.".
+            format(textColorMagentaBold=terminal.TEXT_COLOR_MAGENTA_BOLD, textFormatReset=terminal.TEXT_FORMATTING_RESET))
         self.wood += self.woodMultiplier
 
     def _increment_exp(self):
@@ -70,7 +72,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            console.clear_screen()
+            terminal.clear_screen()
             game.update()
             game.draw()
             time.sleep(1) # tfw not using delta
