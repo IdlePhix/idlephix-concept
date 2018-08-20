@@ -9,7 +9,7 @@ __author__ = "Phixyn"
 from chat import Chat
 from items.wood import Wood
 from skills.woodcutting import Woodcutting
-from util import terminal
+from utils import terminal
 # from util.logger import logger
 
 
@@ -57,4 +57,4 @@ class Game:
         """
         print("Wood: {0} | Woodcutting exp: {1} | Woodcutting level: {2}".format(self.wood.amount, self.woodcutting.totalExperience, self.woodcutting.level))
         # print("Woodcutting exp (level): {0}".format(self.woodcutting.levelExperience)) # For debugging only
-        self._chat.print_chat()
+        self._chat.print()
