@@ -18,9 +18,9 @@ TEXT_COLOR_MAGENTA_BOLD = "\033[38;35;1m"
 TEXT_FORMATTING_RESET = "\033[0m" # Resets the text formatting back to default
 
 
-def clear_screen():
+def clear():
     """
-    Clear console and buffer
+    Clears the terminal and its buffer.
     """
     if os.name == "nt":
         os.system("cls")
