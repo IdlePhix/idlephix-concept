@@ -12,7 +12,7 @@ class Chat:
     """
     def __init__(self, max_messages=5):
         """
-        Default constructor.
+        Class constructor method.
         """
         self._messages = []
         self._maxMessages = max_messages
