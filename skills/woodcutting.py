@@ -17,6 +17,7 @@ class Woodcutting:
         """
         Class constructor method.
         """
+        self.name = "Woodcutting"
         self.level = 1
         self.totalExperience = 0
         self.levelExperience = 0

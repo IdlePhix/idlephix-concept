@@ -6,7 +6,9 @@ Module containing the Game class for the game.
 __author__ = "Phixyn"
 
 
+
 from chat import Chat
+from player import Player
 from items.wood import Wood
 from skills.woodcutting import Woodcutting
 from utils import terminal
@@ -21,14 +23,20 @@ class Game:
         """
         Class constructor method.
         """
+        # Player object
+        self.player = Player("Phixyn")
+        # Skills and items
+        _woodcutting = Woodcutting()
+        self.player.add_skill(_woodcutting)
+        _wood = Wood()
+        self.player.add_item_to_inventory(_wood)
+        print(self.player.inventory)
+        print(self.player.skills)
+
         # Chat "window" area
         self._chat = Chat(max_messages=10)
         self._chat.add_message("Welcome to {textColorMagenta}IdlePhix{textFormatReset}.".
             format(textColorMagenta=terminal.TEXT_COLOR_MAGENTA, textFormatReset=terminal.TEXT_FORMATTING_RESET))
-
-        # Skills and items
-        self.woodcutting = Woodcutting()
-        self.wood = Wood()
 
     def _increment_resources_and_exp(self):
         """

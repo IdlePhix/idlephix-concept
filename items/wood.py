@@ -19,6 +19,7 @@ class Wood:
         """
         Class constructor method.
         """
+        self.name = "Wood"
         # TODO woodcutting level required
         self.amount = 0
         self._gatherMultiplier = 1 # TODO depends on axe/hatchet item (part of item configuration)
