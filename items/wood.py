@@ -24,10 +24,10 @@ class Wood:
         self._gatherMultiplier = 1 # TODO depends on axe/hatchet item (part of item configuration)
         self.gatherMessage = "You chop down some {textColorMagentaBold}wood{textFormatReset}.".\
             format(textColorMagentaBold=terminal.TEXT_COLOR_MAGENTA_BOLD, textFormatReset=terminal.TEXT_FORMATTING_RESET)
-        self.woodcuttingExpMultiplier = 3 # Should be part of the item configuration (rename to skillExpMultiplier?)
+        self.woodcuttingExpMultiplier = 0.5 # Should be part of the item configuration (rename to skillExpMultiplier?)
 
     def chop(self):
         """
-        Adds wood to inventory.
+        Adds wood to the inventory.
         """
         self.amount += self._gatherMultiplier
