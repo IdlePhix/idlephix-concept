@@ -6,7 +6,7 @@ Module containing the Wood item class for the game.
 __author__ = "Phixyn"
 
 
-from util import terminal
+from utils import terminal
 
 
 class Wood:

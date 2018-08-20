@@ -6,7 +6,7 @@ Module containing the Woodcutting skill class for the game.
 __author__ = "Phixyn"
 
 
-# from util import terminal
+# from utils import terminal
 
 
 class Woodcutting:

@@ -12,8 +12,8 @@ __version__ = "v0.0.2"
 import sys
 import time
 from game import Game
-from util import terminal
-from util.logger import logger
+from utils import terminal
+from utils.logger import logger
 
 
 if __name__ == "__main__":
