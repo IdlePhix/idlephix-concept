@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            # terminal.clear()
+            terminal.clear_screen()
             game.update()
             game.draw()
             time.sleep(1) # tfw not using delta

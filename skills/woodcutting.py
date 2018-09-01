@@ -22,7 +22,8 @@ class Woodcutting:
         self.totalExperience = 0
         self.levelExperience = 0
         self._expPerLevel = 25 # Experience needed to level up
-        self.levelUpMessage = "Congratulations, you have leveled up {textColorMagentaBold}woodcutting{textFormatReset}. You are now level {woodcuttingLevel}."
+        # TODO: getlevelUpMessage and return this string (saves us from formatting it in other classes)
+        self.levelUpMessage = "Congratulations, you've just advanced your {textColorMagentaBold}Woodcutting{textFormatReset} level. You are now level {woodcuttingLevel}."
 
     def add_exp(self, exp):
         """

@@ -26,10 +26,10 @@ class Game:
         # Player object
         self.player = Player("Phixyn")
         # Skills and items
-        _woodcutting = Woodcutting()
-        self.player.add_skill(_woodcutting)
-        _wood = Wood()
-        self.player.add_item_to_inventory(_wood)
+        self._woodcutting = Woodcutting()
+        self.player.add_skill(self._woodcutting)
+        self._wood = Wood()
+        self.player.add_item_to_inventory(self._wood)
         print(self.player.inventory)
         print(self.player.skills)
 
@@ -42,16 +42,16 @@ class Game:
         """
         Increments the amount of each item and gives experience points to the associated item's skill.
         """
-        self.wood.chop()
-        self._chat.add_message(self.wood.gatherMessage)
+        self._wood.chop()
+        self._chat.add_message(self._wood.gatherMessage)
 
         # For now, add_exp returns true if there was a level up
-        if self.woodcutting.add_exp(self.wood.woodcuttingExpMultiplier):
+        if self._woodcutting.add_exp(self._wood.woodcuttingExpMultiplier):
             # TODO using .format here is a bit bad e_e
-            self._chat.add_message(self.woodcutting.levelUpMessage.
+            self._chat.add_message(self._woodcutting.levelUpMessage.
                 format(textColorMagentaBold=terminal.TEXT_COLOR_MAGENTA_BOLD,
                     textFormatReset=terminal.TEXT_FORMATTING_RESET,
-                    woodcuttingLevel=self.woodcutting.level))
+                    woodcuttingLevel=self._woodcutting.level))
 
     def update(self):
         """
@@ -63,6 +63,6 @@ class Game:
         """
         "Draws" the game "window".
         """
-        print("Wood: {0} | Woodcutting exp: {1} | Woodcutting level: {2}".format(self.wood.amount, self.woodcutting.totalExperience, self.woodcutting.level))
+        print("Wood: {0} | Woodcutting exp: {1} | Woodcutting level: {2}".format(self._wood.amount, self._woodcutting.totalExperience, self._woodcutting.level))
         # print("Woodcutting exp (level): {0}".format(self.woodcutting.levelExperience)) # For debugging only
         self._chat.print()

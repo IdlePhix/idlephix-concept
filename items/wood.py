@@ -26,6 +26,9 @@ class Wood:
         self.gatherMessage = "You chop down some {textColorMagentaBold}wood{textFormatReset}.".\
             format(textColorMagentaBold=terminal.TEXT_COLOR_MAGENTA_BOLD, textFormatReset=terminal.TEXT_FORMATTING_RESET)
         self.woodcuttingExpMultiplier = 0.5 # Should be part of the item configuration (rename to skillExpMultiplier?)
+        # TODO: lol sleepless night gg
+        # self.experienceRewards = {"Woodcutting": 0.5, "RandomSkill": 1}
+        self.experienceRewards = {"Woodcutting": 0.5}
 
     def chop(self):
         """
