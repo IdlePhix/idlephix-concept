@@ -12,8 +12,8 @@ __version__ = "v0.0.2"
 import sys
 import time
 from game import Game
-from util import terminal
-from util.logger import logger
+from utils import terminal
+from utils.logger import logger
 
 
 if __name__ == "__main__":
@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            terminal.clear()
+            terminal.clear_screen()
             game.update()
             game.draw()
             time.sleep(1) # tfw not using delta

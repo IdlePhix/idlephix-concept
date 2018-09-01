@@ -26,16 +26,18 @@ class Chat:
         if len(self._messages) > self._maxMessages:
             del(self._messages[0])
 
-    def clear_chat(self):
+    def clear(self):
         """
         Removes all the chat messages from the messages array.
         """
+        # TODO rename method to clear()?
         self._messages.clear()
 
-    def print_chat(self):
+    def print(self):
         """
         Prints all the chat messages in the messages array.
         """
+        # TODO rename method to print()?
         print("\n"*3) # TODO naughty magic number
         for message in self._messages:
             print(message)
