@@ -24,13 +24,13 @@ class Player:
         """
         TODO
         """
-        self.inventory[item["name"]] = item
+        self.inventory[item.name] = item
     
     def add_skill(self, skill):
         """
         TODO
         """
-        self.skills[skill["name"]] = skill
+        self.skills[skill.name] = skill
 
     def update_inventory_item(self, item):
         """
