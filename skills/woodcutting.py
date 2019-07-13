@@ -6,7 +6,7 @@ Module containing the Woodcutting skill class for the game.
 __author__ = "Phixyn"
 
 
-# from utils import terminal
+from utils import terminal
 
 
 class Woodcutting:
@@ -22,8 +22,6 @@ class Woodcutting:
         self.totalExperience = 0
         self.levelExperience = 0
         self._expPerLevel = 25 # Experience needed to level up
-        # TODO: getlevelUpMessage and return this string (saves us from formatting it in other classes)
-        self.levelUpMessage = "Congratulations, you've just advanced your {textColorMagentaBold}Woodcutting{textFormatReset} level. You are now level {woodcuttingLevel}."
 
     def add_exp(self, exp):
         """
@@ -43,3 +41,10 @@ class Woodcutting:
             return True
         else:
             return False
+
+    def get_level_up_message(self):
+        return "Congratulations, you've just advanced your \
+{textColorMagentaBold}Woodcutting{textFormatReset} level. You are now level {woodcuttingLevel}." \
+            .format(textColorMagentaBold=terminal.TEXT_COLOR_MAGENTA_BOLD,
+                    textFormatReset=terminal.TEXT_FORMATTING_RESET,
+                    woodcuttingLevel=self.level)
