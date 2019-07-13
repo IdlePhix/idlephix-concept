@@ -6,13 +6,12 @@ Increments things (?).
 
 
 __author__ = "Phixyn"
-__version__ = "v0.0.2"
+__version__ = "v1.0.0"
 
 
 import sys
 import time
 from game import Game
-from utils import terminal
 from utils.logger import logger
 
 
@@ -21,8 +20,9 @@ if __name__ == "__main__":
 
     try:
         while True:
-            terminal.clear_screen()
+            # Event handling, if needed/applicable, goes here
             game.update()
+            # terminal.clear_screen() # moved to game.draw()
             game.draw()
             time.sleep(1) # tfw not using delta
     except KeyboardInterrupt as ex:
